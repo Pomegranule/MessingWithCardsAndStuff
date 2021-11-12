@@ -1,10 +1,17 @@
-@font-face {
-    font-family: minecraftReg;
-    src: url(others/minecraft_font.ttf);
+*, *::after, *::before {
+    font-family: 'Yuji Syuku', serif;
 }
 
 .card {
-    background: #690;
+    --color: #2a3c24ff;
+    --background: #CFE0A3;
+    --padding: 1rem;
+    --shadowColour: #243010;
+    color: var(--color);
+    background: var(--background);
+    padding: var(--padding);
     font-size: .25;
-    font-style: 
+    border:none;
+    box-shadow: 0 2px 5px var(--shadowColour);
+    border-radius: .25rem;
 }
