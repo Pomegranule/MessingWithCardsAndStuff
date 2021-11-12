@@ -1,0 +1,10 @@
+@font-face {
+    font-family: minecraftReg;
+    src: url(others/minecraft_font.ttf);
+}
+
+.card {
+    background: #690;
+    font-size: .25;
+    font-style: 
+}
