@@ -2,6 +2,13 @@
     font-family: 'Yuji Syuku', serif;
 }
 
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+}
+
 .card {
     --color: #2a3c24ff;
     --background: #CFE0A3;
@@ -14,4 +21,38 @@
     border:none;
     box-shadow: 0 2px 5px var(--shadowColour);
     border-radius: .25rem;
+}
+
+.card-header {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-header > img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-header > img {
+    transform: scale(1.025);
+}
+
+.card-text {
+    font-size: .9rem;
+    padding: 0 var(--padding);
+}
+
+.card-footer {
+    margin-top: 1rem;
+    padding: var(--padding);
+    padding-top: 0;
+}
+
+.btn {
+    --color: 
 }
