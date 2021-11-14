@@ -54,5 +54,30 @@
 }
 
 .btn {
-    --color: 
+    --btncolor: hsl(70, 44%, 71%);
+    --btnhover: hsl(70, 44%, 90%);
+    color: #f8ffe6;
+    background: var(--btncolor);
+    border: none;
+    padding: .5em .75em;
+    border-radius: .25em;
+    cursor: pointer;
+}
+
+.btn:hover, button:focus{
+    background:var(--btnhover);
+}
+
+.btn.btn-outline{
+    background: none;
+    border: 1px solid var(--color);
+    color: var(--color);
+}
+
+.btn.btn-outline:hover, .btn.btn-outline:focus{
+    background: var(--btnhover);
+}
+
+.btn + .btn{
+    margin-left: .25rem;
 }
