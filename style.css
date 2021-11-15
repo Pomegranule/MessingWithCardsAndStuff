@@ -1,0 +1,174 @@
+*, *::after, *::before {
+    font-family: 'Yuji Syuku', serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    --color: #2a3c24ff;
+    --background: #CFE0A3;
+    --padding: 1rem;
+    --shadowColour: #243010;
+    --navbarColour: #DDE9BB;
+    --textColourLight: #f8ffe6;
+}
+
+body::-webkit-scrollbar{
+    width: .5rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: var(--textColourLight);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--color);
+    border-radius: .25rem;
+}
+
+.navbar{
+    width: 5rem;
+    height: 100vh;
+    /* The width needs to take up the amount of space that you made for the margin-left of the body. The height needs to take up the whole of the viewport. This is what creates the sidebar. */
+    position: fixed;
+    /* This keeps it attached to the screen, even when you scroll. */
+    background-color: var(--color);
+    transition: width 400ms ease;
+    box-shadow: 0 0px 5px var(--shadowColour);
+}
+
+.nav-list{
+    list-style: none;
+    /* gets rid of the bullet points. */
+    padding: 0;
+    margin: 0;
+    /* Removes weird spacing and shoves all the icons to the very edge. */
+    display: flex;
+    flex-direction: column;
+    /* Stacks the icons vertically. */
+    align-items: center;
+   
+}
+
+.navbar-btn{
+    width: 100%;
+}
+
+.navbar-btn.aboutUs-btn {
+    margin-top: 39vh;
+    /* One reason why this might not be working, is due to the nav-btn's contents, not being contained within another container. EDIT: Nope. EDIT: Just used vh instead. Hopefully, it will remain responsive. */
+}
+
+.navbar-btn-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--color);
+    text-decoration: none;
+    /* Takes away the link underline. */
+}
+
+.navbar-btn-link img {
+    margin: 0 .75rem;
+}
+
+.btn-link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.navbar:hover {
+    width: 16rem;
+}
+
+.navbar:hover .btn-link-text {
+    display: block;
+    color: var(--textColourLight);
+}
+
+main{
+    margin-left: 5rem;
+    padding: var(--padding);
+    /* Creates a gap in the far left of the webpage. */
+}
+
+/* Parent div for cards. Creates a grid layout for all the cards to sit in. */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+/* Start of styling for all the card divs. */
+.card {
+    color: var(--color);
+    background: var(--background);
+    padding: var(--padding);
+    font-size: .25;
+    border:none;
+    box-shadow: 0 2px 5px var(--shadowColour);
+    border-radius: .25rem;
+}
+
+.card-header {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-header > img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-header > img {
+    transform: scale(1.025);
+}
+
+.card-text {
+    font-size: .9rem;
+    padding: 0 var(--padding);
+}
+
+.card-footer {
+    margin-top: 1rem;
+    padding: var(--padding);
+    padding-top: 0;
+}
+/* End of styling for all the cards. */
+
+/* Start of styling for buttons (as well as the hover/focus functions). */
+.btn {
+    --btncolor: hsl(70, 44%, 71%);
+    --btnhover: hsl(70, 44%, 90%);
+    color: #f8ffe6;
+    background: var(--btncolor);
+    border: none;
+    padding: .5em .75em;
+    border-radius: .25em;
+    cursor: pointer;
+}
+
+.btn:hover, button:focus{
+    background:var(--btnhover);
+}
+
+.btn.btn-outline{
+    background: none;
+    border: 1px solid var(--color);
+    color: var(--color);
+}
+
+.btn.btn-outline:hover, .btn.btn-outline:focus{
+    background: var(--btnhover);
+}
+
+.btn + .btn{
+    margin-left: .25rem;
+}
+/* End of styling for buttons. */
