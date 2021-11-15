@@ -5,19 +5,26 @@
 body{
     margin: 0;
     padding: 0;
+    --color: #2a3c24ff;
+    --background: #CFE0A3;
+    --padding: 1rem;
+    --shadowColour: #243010;
+    --navbarColour: #DDE9BB;
+    --textColourLight: #f8ffe6;
 }
 
-/* body::-webkit-scrollbar{
-    width: ;
+body::-webkit-scrollbar{
+    width: .5rem;
 }
 
 body::-webkit-scrollbar-track{
-    background: ;
+    background: var(--textColourLight);
 }
 
 body::-webkit-scrollbar-thumb{
-    background: ;
-} */
+    background: var(--color);
+    border-radius: .25rem;
+}
 
 .navbar{
     width: 5rem;
@@ -25,7 +32,9 @@ body::-webkit-scrollbar-thumb{
     /* The width needs to take up the amount of space that you made for the margin-left of the body. The height needs to take up the whole of the viewport. This is what creates the sidebar. */
     position: fixed;
     /* This keeps it attached to the screen, even when you scroll. */
-    
+    background-color: var(--color);
+    transition: width 400ms ease;
+    box-shadow: 0 0px 5px var(--shadowColour);
 }
 
 .nav-list{
@@ -45,13 +54,41 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
 }
 
-.navbar-btn:last-child {
-    margin-top: auto;
-    /* One reason why this might not be working, is due to the nav-btn's contents, not being contained within another container. */
+.navbar-btn.aboutUs-btn {
+    margin-top: 39vh;
+    /* One reason why this might not be working, is due to the nav-btn's contents, not being contained within another container. EDIT: Nope. EDIT: Just used vh instead. Hopefully, it will remain responsive. */
+}
+
+.navbar-btn-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--color);
+    text-decoration: none;
+    /* Takes away the link underline. */
+}
+
+.navbar-btn-link img {
+    margin: 0 .75rem;
+}
+
+.btn-link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.navbar:hover {
+    width: 16rem;
+}
+
+.navbar:hover .btn-link-text {
+    display: block;
+    color: var(--textColourLight);
 }
 
 main{
     margin-left: 5rem;
+    padding: var(--padding);
     /* Creates a gap in the far left of the webpage. */
 }
 
@@ -65,10 +102,6 @@ main{
 
 /* Start of styling for all the card divs. */
 .card {
-    --color: #2a3c24ff;
-    --background: #CFE0A3;
-    --padding: 1rem;
-    --shadowColour: #243010;
     color: var(--color);
     background: var(--background);
     padding: var(--padding);
